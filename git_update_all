@@ -1,0 +1,49 @@
+#!/usr/bin/bash
+#
+# REMEMBER that the way building an image works in the repository
+# hpc-hms_ec-hms-scimage is by cloning all repos that are needed inside the
+# directory pointed to by the variable $WORKAREA
+#
+# Similarly, when building the simulator you have to clone
+# hpc-sshot-slingshot-fabric-simulation and hpc-sshot-slingshot_controller_ng
+# in the same parent directory, and, the script "runBuildAll" under
+# hpc-sshot-slingshot-fabric-simulation clones any necessary repo under
+# switc/src
+#
+# The objective of this script is to update all github repositories that
+# were cloned under a directory, whether directly or much deeper
+#
+# This script updates all github repositories that were cloned in directories
+# under a given subdirectory
+# That subdirectory can be passed as the first argument to this script,
+# otherwise it assumes it is the current directory
+#
+# The way this script runs is as follows
+# - Run the script
+#   - PAss the directory  as the first argument
+#   OR
+#   - without any arguments from the directory 
+# - IT will look into every subdirectory under the current directory (if no
+#    arguments passed), or in the directory passed as the first argument 
+# - If it finds the subdiretory ".git/" under any directory, it will assume
+#   that this subdirectory is a cloned repository
+# - Hence it will go inside it and do "git pull origin"
+#
+if [ -z ${1} ];  then
+    MYWORKAREA=`pwd`
+else
+    MYWORKAREA=$1
+fi
+
+for i in $(find $MYWORKAREA -type d ); do
+    if [ -d "$i/.git" ]; then
+        
+        echo cd $i
+        echo git pull origin
+        cd $i
+        git pull origin
+    fi
+done
+         
+         
+         
