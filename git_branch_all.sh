@@ -3,6 +3,8 @@
 # 
 # The objective of this script is to go into all github repositories that
 # were cloned and do "git branch"
+# Pass the starting dirfectory as the first arguumenmt
+# If there are no arguments, it assumes your starting directory is the current directory
 #
 print_usage() {
     echo -e "Usage: "
