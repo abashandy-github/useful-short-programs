@@ -7,9 +7,9 @@
 #
 # The way this script runs is as follows
 # - Run the script
-#   - PAss the directory $WORKAREA as the first argument
+#   - PAss the directory where you want to find github repos as the first argument
 #   OR
-#   - without any arguments from the directory $WORKAREA
+#   - without any arguments it will assume you want to start from the current directory
 # - IT will look into every subdirectory under the current directory (if no
 #    arguments passed), or in the directory passed as the first argument 
 # - If it finds the subdiretory ".git/" under any directory, it will assume
