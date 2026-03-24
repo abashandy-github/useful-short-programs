@@ -1,14 +1,5 @@
 #!/usr/bin/bash
 #
-# REMEMBER that the way building an image works in the repository
-# hpc-hms_ec-hms-scimage is by cloning all repos that are needed inside the
-# directory pointed to by the variable $WORKAREA
-#
-# Similarly, when building the simulator you have to clone
-# hpc-sshot-slingshot-fabric-simulation and hpc-sshot-slingshot_controller_ng
-# in the same parent directory, and, the script "runBuildAll" under
-# hpc-sshot-slingshot-fabric-simulation clones any necessary repo under
-# switc/src
 #
 # The objective of this script is to run git status github repositories that
 # were cloned under a directory, whether directly or much deeper
