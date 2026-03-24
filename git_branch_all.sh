@@ -1,6 +1,9 @@
 #!/usr/bin/bash
 #
 # 
+# The objective of this script is to go into all github repositories that
+# were cloned and do "git branch"
+#
 print_usage() {
     echo -e "Usage: "
     echo -e "${0} [options] <starting-dir-to-do-git-branch> "
