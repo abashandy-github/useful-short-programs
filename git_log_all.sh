@@ -1,10 +1,6 @@
 #!/usr/bin/bash
 #
-# REMEMBER that the way building an image works in the repository
-# hpc-hms_ec-hms-scimage is by cloning all repos that are needed inside the
-# directory pointed to by the variable $WORKAREA
-# Similarly for the simulation, the repositories needed to build the simulation
-# containers are cloned under hpc-sshot-slingshot-fabric-simulation/switch/src
+#
 #
 # The objective of this script is to go into all github repositories that
 # were cloned and do "git log"
