@@ -13,7 +13,7 @@
 # - Run the script
 #   - PAss the directory  as the first argument
 #   OR
-#   - without any arguments from the directory 
+#   - without any arguments from the current directory 
 # - IT will look into every subdirectory under the current directory (if no
 #    arguments passed), or in the directory passed as the first argument 
 # - If it finds the subdiretory ".git/" under any directory, it will assume
