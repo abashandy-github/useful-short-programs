@@ -1,25 +1,6 @@
 #!/usr/bin/bash
 #
-# REMEMBER that the way building an image works in the repository
-# hpc-hms_ec-hms-scimage is by cloning all repos that are needed inside the
-# directory pointed to by the variable $WORKAREA
-# Similarly for the simulation, the repositories needed to build the simulation
-# containers are cloned under hpc-sshot-slingshot-fabric-simulation/switch/src
-#
-# The objective of this script is to go into all github repositories that
-# were cloned and do "git log"
-#
-# The way this script runs is as follows
-# - Run the script
-#   - PAss the directory $WORKAREA as the first argument
-#   OR
-#   - without any arguments from the directory $WORKAREA
-# - IT will look into every subdirectory under the current directory (if no
-#    arguments passed), or in the directory passed as the first argument 
-# - If it finds the subdiretory ".git/" under any directory, it will assume
-#   that this subdirectory is a cloned repository
-# - Hence it will go inside it and do "git pull origin"
-#
+# 
 print_usage() {
     echo -e "Usage: "
     echo -e "${0} [options] <starting-dir-to-do-git-branch> "
