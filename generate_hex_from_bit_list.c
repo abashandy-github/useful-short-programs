@@ -22,6 +22,11 @@
  * bash-3.2$ ./generate_hex_from_bit_list 1 3 5 10 50 6
  * The number '0x400000000046a' (also binary 100000000000000000000000000000000000000010001101010b and decimal '1125899906843754') has 6 1's
  * bash-3.2$ 
+ *
+ * Example 3: repeated bit positions
+ * bash-3.2$ ./generate_hex_from_bit_list 1 1 1 2 2 2
+ * The number '0x6' (also binary 110b and decimal '6') has 2 1's
+ * bash-3.2$ 
  */
 
 
@@ -59,6 +64,18 @@ int main (int argc, char *argv[])
       num = num | ((uint64_t)1 << bit_position);
     }
 
+    /*
+     * Count the number of 1's
+     */
+    uint32_t count = 0;
+    uint64_t num2 = num;
+    for (i = 0; i < sizeof(num)*8; i++) {
+        if (num2 & 1) {
+            count++;
+        }
+        num2 = (num2 >> 1);
+    }
+    
     /* Get the bimary format
      * Unfortunately, there is no somthing like %b of PRIb64 in printf()
      */
@@ -76,7 +93,7 @@ int main (int argc, char *argv[])
 
     
     printf("The number '0x%"PRIx64"' (also binary %sb and decimal '%"PRIu64"') has %u 1's\n",
-           num, buf2, num, argc - 1);
+           num, buf2, num, count);
     exit(0);
 }
     
