@@ -1,15 +1,20 @@
 /*
- * This is a simple program that a list of numbers from 0 to 63 and will
- * generate a unit64_t from this list and print out the hexa and decimal values
- * of the gnerated number
- * format and prints out the number and positions of the 1 in its binary fomrat
+ * This is a simple program that takes a list of numbers from 0 to 63 and will
+ * generate a unit64_t from this list by putting 1's in the bit positions
+ * specified by thw numbers in this list. Then it prints out the hexa, binary,
+ * and decimal values of the generated number as well as the number of 1's in
+ * the binary format.
+ * Note that because we do NOT check for repeated values in the list opf
+ * numbers, the number of 1's may be less than the number of numbers that were
+ * passed
+ *
  * How to build
  * - Without debugs
  * gcc generate_hex_from_bit_list.c -o generate_hex_from_bit_list
  * - With debug info (e.g. to use with GDB)
  *  gcc -O0 -g generate_hex_from_bit_list.c -o generate_hex_from_bit_list
  *
- * Example
+ * Example 
  * bash-3.2$ ./generate_hex_from_bit_list 1 3 5 10 13 6
  * The number '0x246a' (also binary 10010001101010b and decimal '9322') has 6 1's
  *
