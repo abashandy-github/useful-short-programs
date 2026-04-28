@@ -17,7 +17,7 @@
  *
  * Example
  *  $ ./count_num_ones -l4 -r8 -a0xfffff  0xfa65287613
- *  The number 'fa65287613' which is also '0x1075438974483' 
+ *  The number '0xfa65287613' which is also '1075438974483' 
  *  	left-shifted by 4 bits to give 0xfa652876130 then 
  *  	right-shifted by 8 bits to give 0xfa6528761 then 
  *  	bitwise ANDed with 0xfffff (1048575) to give 0x28761
@@ -26,40 +26,40 @@
  * 
  * Example
  * $ ./count_num_ones -a0xff 0x000300030003c303
- * The number '300030003c303' which is also '0x844437815280387' 
+ * The number '0x300030003c303' which is also '844437815280387' 
  * 	bitwise ANDed with 0xff (255) to give 0x3
  * 1's positions: 0 1
  * has 2 1's
  *
  * example
  * $ ./count_num_ones -r4 0x000300030003c303
- * The number '300030003c303' which is also '0x844437815280387' 
+ * The number '0x300030003c303' which is also '844437815280387' 
  * 	right-shifted by 4 bits to give 0x300030003c30
  * 1's positions: 4 5 10 11 12 13 28 29 44 45
  * has 10 1's
  *
  * Example
  * $ ./count_num_ones -l8 0x000300030003c303
- * The number '300030003c303' which is also '0x844437815280387' 
+ * The number '0x300030003c303' which is also '844437815280387' 
  * 	left-shifted by 8 bits to give 0x300030003c30300
  * 1's positions: 8 9 16 17 22 23 24 25 40 41 56 57
  * has 12 1's
  * 
  * Example
  * $ ./count_num_ones 0x000300030003c303
- * The number '300030003c303' which is also '0x844437815280387' 
+ * The number '0x300030003c303' which is also '844437815280387' 
  * 1's positions: 0 1 8 9 14 15 16 17 32 33 48 49
  * has 12 1's
  *
  * Example 2
  * $ ./count_num_ones 0x300030003c303
- * The number '300030003c303' which is also '0x844437815280387' 
+ * The number '0x300030003c303' which is also '844437815280387' 
  * 1's positions: 0 1 8 9 14 15 16 17 32 33 48 49
  * has 12 1's
  *
  * Example
  * $ ./count_num_ones -c -a0xff 0x000300030003c303
- * The number '300030003c303' which is also '0x844437815280387' 
+ * The number '0x300030003c303' which is also '844437815280387' 
  * 	bitwise ANDed with 0xff (255) to give 0x3
  * has 2 1's
  */
@@ -159,7 +159,7 @@ int main (int argc, char *argv[])
   uint64_t num_after_shift_left_then_right_then_and = num;    
 
   int i;
-  printf("The number '%"PRIx64"' which is also '0x%"PRIu64"' ", original, original);
+  printf("The number '0x%"PRIx64"' which is also '%"PRIu64"' ", original, original);
   if (shift_left) {
     printf("\n\tleft-shifted by %d bits to give 0x%"PRIx64"", shift_left, num_after_shift_left);
   }
